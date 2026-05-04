@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Saloni Gupta</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --ink: #0a0a0a; --paper: #f5f0e8; --warm: #c8b89a; --cobalt: #1b3a6b; --cobalt-light: #2e5fa3; --cobalt-pale: #dce8f5; --muted: #6b6456; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Syne', sans-serif; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+  nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid rgba(200,184,154,0.12); background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); }
+  .logo { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--warm); text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+
+  main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; }
+
+  .contact-left { padding: 5rem 5%; border-right: 1px solid rgba(200,184,154,0.1); display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--cobalt-light); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 2rem; }
+  h1 em { font-style: italic; color: var(--warm); }
+  .contact-desc { font-size: 0.9rem; color: rgba(245,240,232,0.5); line-height: 1.9; max-width: 420px; margin-bottom: 3rem; }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 1.5rem; border: 1px solid rgba(200,184,154,0.15);
+    color: var(--paper); text-decoration: none;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .contact-link:hover { border-color: var(--warm); background: rgba(200,184,154,0.04); }
+  .cl-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+  .cl-value { font-size: 0.9rem; }
+  .cl-arrow { font-size: 1.2rem; color: var(--cobalt-light); }
+
+  .availability { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(200,184,154,0.1); }
+  .avail-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+  .avail-types { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .avail-tag { padding: 0.35rem 0.85rem; border: 1px solid rgba(46,95,163,0.4); color: var(--cobalt-pale); font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  .contact-right { padding: 5rem 5%; display: flex; flex-direction: column; justify-content: center; }
+  .form-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+  .form-group { margin-bottom: 1.75rem; }
+  input, textarea {
+    width: 100%; background: rgba(200,184,154,0.04); border: 1px solid rgba(200,184,154,0.15);
+    color: var(--paper); font-family: 'Syne', sans-serif; font-size: 0.9rem;
+    padding: 0.9rem 1rem; outline: none; resize: vertical;
+    transition: border-color 0.3s;
+  }
+  input:focus, textarea:focus { border-color: var(--cobalt-light); }
+  input::placeholder, textarea::placeholder { color: rgba(245,240,232,0.2); }
+  textarea { min-height: 140px; }
+  .submit-btn {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.9rem 2.5rem; background: var(--cobalt); color: var(--paper);
+    border: none; font-family: 'Syne', sans-serif; font-size: 0.75rem;
+    letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+  .submit-btn:hover { background: var(--cobalt-light); transform: translateY(-2px); }
+
+  footer { padding: 1.5rem 5%; border-top: 1px solid rgba(200,184,154,0.1); display: flex; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(200,184,154,0.25); }
+
+  @media (max-width: 680px) {
+    main { grid-template-columns: 1fr; }
+    .contact-left { border-right: none; border-bottom: 1px solid rgba(200,184,154,0.1); }
+    footer { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Saloni Gupta</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="contact-left">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h1>Every frame<br>is a <em>decision.</em></h1>
+      <p class="contact-desc">Ready to take your raw footage from flat to finished? Let's talk about what you're shooting, what you need, and how quickly you need it.</p>
+      <div class="contact-links">
+        <a href="mailto:Sg405422@gmail.com" class="contact-link">
+          <div>
+            <div class="cl-label">Email</div>
+            <div class="cl-value">Sg405422@gmail.com</div>
+          </div>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="https://linkedin.com/in/saloni-gupta-b38497243/" class="contact-link" target="_blank">
+          <div>
+            <div class="cl-label">LinkedIn</div>
+            <div class="cl-value">saloni-gupta-b38497243</div>
+          </div>
+          <span class="cl-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="availability">
+      <div class="avail-label">Available for</div>
+      <div class="avail-types">
+        <span class="avail-tag">Per Project</span>
+        <span class="avail-tag">Monthly Retainer</span>
+        <span class="avail-tag">Remote</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>Saloni Gupta — 2026</span>
+  <span>Delhi, India · Remote</span>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = 'Sent ✓';
+    btn.style.background = '#1b6b3a';
+    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
+  }
+</script>
+</body>
+</html>
