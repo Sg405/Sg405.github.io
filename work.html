@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work | Saloni Gupta</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --ink: #0a0a0a; --paper: #f5f0e8; --warm: #c8b89a; --cobalt: #1b3a6b; --cobalt-light: #2e5fa3; --cobalt-pale: #dce8f5; --muted: #6b6456; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+  nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid rgba(200,184,154,0.12); background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); }
+  .logo { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--warm); text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+
+  .page-hero { padding: 5rem 5% 3rem; border-bottom: 1px solid rgba(200,184,154,0.1); }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--cobalt-light); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; line-height: 1.1; }
+  h1 em { font-style: italic; color: var(--warm); }
+
+  section { padding: 4rem 5%; border-bottom: 1px solid rgba(200,184,154,0.1); }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.15); }
+
+  /* GRADE PALETTES */
+  .palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .palette-card { background: rgba(200,184,154,0.04); border: 1px solid rgba(200,184,154,0.1); padding: 2rem; }
+  .palette-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .palette-card .sub { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; }
+  .tone-strip { height: 12px; border-radius: 2px; margin-bottom: 0.4rem; }
+  .tone-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1rem; }
+  .palette-desc { font-size: 0.82rem; color: rgba(245,240,232,0.45); line-height: 1.8; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(200,184,154,0.08); }
+
+  /* PROCESS */
+  .process-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 3rem; }
+  .process-row:last-child { margin-bottom: 0; }
+  .process-text h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 1rem; }
+  .process-text p { font-size: 0.88rem; color: rgba(245,240,232,0.55); line-height: 1.9; }
+  .process-text ul { list-style: none; margin-top: 1.2rem; }
+  .process-text ul li { font-size: 0.82rem; color: rgba(245,240,232,0.45); padding: 0.5rem 0; border-bottom: 1px solid rgba(200,184,154,0.08); display: flex; align-items: center; gap: 0.75rem; }
+  .process-text ul li::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--cobalt-light); flex-shrink: 0; }
+
+  /* TYPE MOCKUP */
+  .type-demo { background: rgba(0,0,0,0.4); border: 1px solid rgba(200,184,154,0.1); padding: 2rem; }
+  .type-demo-row { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(200,184,154,0.08); }
+  .type-demo-row:last-child { margin-bottom: 0; border-bottom: none; }
+  .type-tag { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+
+  @media (max-width: 680px) {
+    .process-row { grid-template-columns: 1fr; gap: 2rem; }
+    .palette-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Saloni Gupta</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="eyebrow">Portfolio</div>
+  <h1>Grade. <em>Type.</em><br>Polish. Finish.</h1>
+</div>
+
+<!-- COLOR GRADING -->
+<section>
+  <div class="section-label">Color Grading</div>
+  <div class="palette-grid">
+    <div class="palette-card">
+      <h3>Tech Review — Cobalt</h3>
+      <div class="sub">LOG Correction · DaVinci Resolve</div>
+      <div class="tone-strip" style="background:linear-gradient(to right,#1a1a2e,#2e5fa3,#5b8dd9,#dce8f5);"></div>
+      <div class="tone-label">Shadow push → Cool midtones → Clean highlight</div>
+      <p class="palette-desc">Cool, precise palette that makes product surfaces feel premium and engineered. Skin tones are isolated and kept natural against the cooled environment.</p>
+    </div>
+    <div class="palette-card">
+      <h3>Studio Review — Warm Tungsten</h3>
+      <div class="sub">White Balance Correction · Premiere Pro</div>
+      <div class="tone-strip" style="background:linear-gradient(to right,#2d1a0e,#6b3a1f,#c8954a,#f0dbb0);"></div>
+      <div class="tone-label">Lift shadows → Warm correction → Creamy high</div>
+      <p class="palette-desc">Corrects the green/yellow cast common in mixed LED/tungsten setups. Renders the scene inviting without looking over-processed.</p>
+    </div>
+    <div class="palette-card">
+      <h3>Minimal Product Focus</h3>
+      <div class="sub">Selective Saturation · DaVinci Resolve</div>
+      <div class="tone-strip" style="background:linear-gradient(to right,#0a0a0a,#2a2a2a,#555,#d4d4d4);"></div>
+      <div class="tone-label">Desaturated environment — product pops</div>
+      <p class="palette-desc">Everything in the environment recedes to near-monochrome so the product colour becomes the only visual priority in the frame.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="section-label">Grading Process</div>
+  <div class="process-row">
+    <div class="process-text">
+      <h2>Grade with intent, not with presets.</h2>
+      <p>Every job starts from scratch. Presets create visual shortcuts, and shortcuts show. My process is methodical — primary correction first, then scene matching, then the creative grade that gives the piece its character.</p>
+      <ul>
+        <li>LOG footage primary correction (lift/gamma/gain)</li>
+        <li>Skin tone isolation & protection via qualifier</li>
+        <li>Cohesive scene-to-scene matching</li>
+        <li>Product highlight refinement</li>
+        <li>LUT development for brand consistency</li>
+      </ul>
+    </div>
+    <div class="process-text">
+      <h2>Tools I work in.</h2>
+      <p>Primarily DaVinci Resolve for color work — the node-based workflow lets me build grades that are logical, reversible, and easy to hand off. Premiere Pro Lumetri for edits that need to stay in the same timeline.</p>
+      <ul>
+        <li>DaVinci Resolve — color page (primary tool)</li>
+        <li>Premiere Pro — Lumetri Color, editing</li>
+        <li>After Effects — title animation, motion graphics</li>
+        <li>LOG formats: S-Log, C-Log, V-Log</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="type">
+  <div class="section-label">Typography</div>
+  <div class="process-row">
+    <div class="process-text">
+      <h2>Type is design.<br>Treat it like one.</h2>
+      <p>On-screen text in tech reviews is often the cheapest-looking element of otherwise expensive productions. Typeface selection, weight, tracking, and animation all need to serve the brand's register — not a template's defaults.</p>
+      <ul>
+        <li>Typeface selection aligned to product tier</li>
+        <li>Motion that reveals, not distracts</li>
+        <li>Negative space as a design element</li>
+        <li>Consistent hierarchy across all frames</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
