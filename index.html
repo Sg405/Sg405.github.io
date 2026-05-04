@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saloni Gupta | Finishing Editor & Colorist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #0a0a0a; --paper: #f5f0e8; --warm: #c8b89a;
+    --cobalt: #1b3a6b; --cobalt-light: #2e5fa3; --cobalt-pale: #dce8f5;
+    --muted: #6b6456;
+  }
+  body { background: var(--ink); color: var(--paper); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 5%; border-bottom: 1px solid rgba(200,184,154,0.12);
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(8px);
+  }
+  .logo { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--warm); text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+
+  .hero {
+    min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; padding: 4rem 5%;
+    border-bottom: 1px solid rgba(200,184,154,0.1); position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(27,58,107,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-text { position: relative; z-index: 2; }
+  .eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--cobalt-light); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.0; font-weight: 400; margin-bottom: 1.8rem; letter-spacing: -0.02em; }
+  h1 em { font-style: italic; color: var(--warm); }
+  .hero-desc { font-size: 1rem; color: rgba(245,240,232,0.55); max-width: 440px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.85rem 2rem; background: var(--cobalt); color: var(--paper);
+    text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    transition: background 0.3s, transform 0.3s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+  .cta-btn:hover { background: var(--cobalt-light); transform: translateY(-2px); }
+  .hero-visual { display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 2; }
+  .color-wheel {
+    width: min(300px, 38vw); aspect-ratio: 1; border-radius: 50%;
+    background: conic-gradient(#1b3a6b 0deg,#2e5fa3 40deg,#5b8dd9 80deg,#8ab4e8 110deg,#c8b89a 150deg,#e8c9a0 180deg,#d4856a 210deg,#b85c38 250deg,#7a2d14 280deg,#4a1a08 310deg,#1b3a6b 360deg);
+    opacity: 0.75; position: relative;
+  }
+  .color-wheel::after { content: ''; position: absolute; inset: 22%; border-radius: 50%; background: var(--ink); }
+  .wheel-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; color: var(--warm); text-transform: uppercase; text-align: center; z-index: 3; line-height: 1.8; }
+
+  .quick-links { display: flex; gap: 0; border-top: 1px solid rgba(200,184,154,0.1); }
+  .quick-link {
+    flex: 1; padding: 2rem 5%; text-decoration: none; color: var(--paper);
+    border-right: 1px solid rgba(200,184,154,0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.3s;
+  }
+  .quick-link:last-child { border-right: none; }
+  .quick-link:hover { background: rgba(200,184,154,0.04); }
+  .ql-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; }
+  .ql-arrow { font-size: 1.2rem; color: var(--cobalt-light); }
+
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .quick-links { flex-direction: column; }
+    .quick-link { border-right: none; border-bottom: 1px solid rgba(200,184,154,0.1); }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Saloni Gupta</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Finishing Editor & Colorist</div>
+    <h1>The frame<br>is <em>never</em><br>finished.</h1>
+    <p class="hero-desc">I turn raw footage into intentional, cohesive storytelling. Every cut, every grade, every typographic choice earns its place.</p>
+    <a href="work.html" class="cta-btn">View My Work →</a>
+  </div>
+  <div class="hero-visual">
+    <div style="position:relative;">
+      <div class="color-wheel">
+        <div class="wheel-label">Color<br>Theory</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quick-links">
+  <a href="work.html" class="quick-link">
+    <span class="ql-title">Color Grading</span>
+    <span class="ql-arrow">→</span>
+  </a>
+  <a href="work.html#type" class="quick-link">
+    <span class="ql-title">Typography</span>
+    <span class="ql-arrow">→</span>
+  </a>
+  <a href="about.html" class="quick-link">
+    <span class="ql-title">About Me</span>
+    <span class="ql-arrow">→</span>
+  </a>
+  <a href="contact.html" class="quick-link">
+    <span class="ql-title">Contact Me</span>
+    <span class="ql-arrow">→</span>
+  </a>
+</div>
+</body>
+</html>
