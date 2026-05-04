@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Saloni Gupta</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --ink: #0a0a0a; --paper: #f5f0e8; --warm: #c8b89a; --cobalt: #1b3a6b; --cobalt-light: #2e5fa3; --cobalt-pale: #dce8f5; --muted: #6b6456; }
+  body { background: var(--ink); color: var(--paper); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+  nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid rgba(200,184,154,0.12); background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); }
+  .logo { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--warm); text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+
+  .page-hero { padding: 5rem 5% 3rem; border-bottom: 1px solid rgba(200,184,154,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--cobalt-light); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; line-height: 1.1; }
+  h1 em { font-style: italic; color: var(--warm); }
+  .hero-quote { font-family: 'DM Serif Display', serif; font-size: 1.1rem; font-style: italic; color: rgba(245,240,232,0.4); line-height: 1.8; border-left: 2px solid var(--cobalt-light); padding-left: 1.5rem; }
+
+  section { padding: 4rem 5%; border-bottom: 1px solid rgba(200,184,154,0.1); }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(200,184,154,0.15); }
+
+  .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .bio-col p { font-size: 0.95rem; color: rgba(245,240,232,0.6); line-height: 1.9; margin-bottom: 1.5rem; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(200,184,154,0.12); }
+  .skill-card { padding: 2rem 1.5rem; border-right: 1px solid rgba(200,184,154,0.12); }
+  .skill-card:last-child { border-right: none; }
+  .sk-tag { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt-light); margin-bottom: 1rem; }
+  .sk-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .sk-desc { font-size: 0.8rem; color: rgba(245,240,232,0.45); line-height: 1.7; }
+
+  .detail-section { background: rgba(27,58,107,0.1); border: 1px solid rgba(46,95,163,0.25); padding: 3rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 3rem; color: var(--cobalt-pale); line-height: 1; }
+  .stat-label { font-size: 0.75rem; color: rgba(245,240,232,0.4); margin-top: 0.5rem; line-height: 1.5; }
+
+  .cobalt-badge { display: inline-block; padding: 0.4rem 1rem; background: var(--cobalt); color: var(--cobalt-pale); font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 1.5rem; }
+
+  @media (max-width: 680px) {
+    .page-hero, .bio-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-card { border-right: none; border-bottom: 1px solid rgba(200,184,154,0.12); }
+    .detail-section { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Saloni Gupta</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div>
+    <div class="eyebrow">About</div>
+    <h1>Precision is<br>a <em>habit,</em><br>not a setting.</h1>
+  </div>
+  <div class="hero-quote">
+    "The editor's job is to see what the camera couldn't, and remove everything that doesn't belong."
+  </div>
+</div>
+
+<section>
+  <div class="section-label">Biography</div>
+  <div class="bio-grid">
+    <div class="bio-col">
+      <p>I'm Saloni - a Delhi-based editor and colorist with a background in English literature and a deep fixation on the craft of visual storytelling. My path into post-production came through a decade of obsessively reading, writing, and editing long-form text, which gave me something most colorists don't have: a structural understanding of how meaning is built layer by layer.</p>
+      <p>That editorial sensibility is what I bring to every finishing job. Color grading isn't just correcting exposure - it's setting the emotional register of a piece. Typography isn't just adding text — it's extending the brand into every frame.</p>
+    </div>
+    <div class="bio-col">
+      <p>I work primarily with tech review and gadget content, where the standard is high and the margin for error is zero. Audiences in this space are visually literate — they notice when something looks off, even if they can't name it.</p>
+      <p>Available for per-project work and monthly retainer arrangements. I turn around fast, I communicate clearly, and I don't miss frames.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Capabilities</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="sk-tag">01</div>
+      <div class="sk-title">Color Grading</div>
+      <p class="sk-desc">DaVinci Resolve node-based grading. LOG correction, skin tone protection, scene matching, LUT development, selective saturation.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-tag">02</div>
+      <div class="sk-title">Typography & Motion</div>
+      <p class="sk-desc">Intentional typeface selection, animated lower thirds, title sequences. After Effects and Premiere Pro. No templates.</p>
+    </div>
+    <div class="skill-card">
+      <div class="sk-tag">03</div>
+      <div class="sk-title">Editorial Instinct</div>
+      <p class="sk-desc">Structural editing, pacing, rhythm. Knowing when a cut is one frame too late comes from years of reading how narrative flow works.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">By the Numbers</div>
+  <div class="detail-section">
+    <div class="stat">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Peers adopted my standardised evaluation rubric</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">12-15</div>
+      <div class="stat-label">Minutes saved per review through systematic process</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">C1</div>
+      <div class="stat-label">English proficiency - every frame reads clearly</div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
